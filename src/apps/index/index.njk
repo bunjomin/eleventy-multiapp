@@ -1,0 +1,13 @@
+---js
+{
+  name: 'index',
+  title: 'Index',
+  layout: 'default',
+  permalink: '/'
+}
+---
+<h1>{{ apps[name].slug }}</h1>
+<div id="{{ apps[name].slug }}"></div>
+<script type="application/javascript">
+  {% include './' + apps[name].slug + '.js' %}
+</script>
