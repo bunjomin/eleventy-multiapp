@@ -1,5 +1,8 @@
 {
   "index": {
     "slug": "index"
+  },
+  "about": {
+    "slug": "about"
   }
 }

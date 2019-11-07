@@ -1,0 +1,18 @@
+<script type="application/javascript">
+  (() => {
+    if (window.bunjomin instanceof Object) return;
+    {% include './router.plugin.js' %}
+    Vue.use(router);
+    const options = {
+      el: '#root',
+      data: function () {
+        return {
+          page: null
+        }
+      },
+      template: '<div><template v-if="page"><component :is="page" /></template></div>',
+      components: {}
+    };
+    window.bunjomin = new Vue(options);
+  })();
+</script>

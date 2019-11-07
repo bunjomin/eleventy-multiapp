@@ -1,0 +1,9 @@
+<script type="application/javascript">
+  (() => {
+    if (!(window.bunjomin instanceof Object)) return;
+    const {{ apps[name].slug }} = Vue.component('{{ apps[name].slug }}', {
+      template: '<div><h1>Yee haw!</h1><a href="/about">About</a></div>'
+    });
+    window.bunjomin.page = '{{ apps[name].slug }}';
+  })();
+</script>
