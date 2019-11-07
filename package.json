@@ -1,0 +1,16 @@
+{
+  "name": "vue-test",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "eleventy --serve",
+    "release": "incrementor"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "0.9.0",
+    "incrementor": "0.2.0"
+  }
+}
