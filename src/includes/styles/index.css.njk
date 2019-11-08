@@ -1,0 +1,11 @@
+{% set css %}
+  {% include './reset.css' %}
+  {% include './variables.css' %}
+  {% include './typography.css' %}
+  {% include './header.css' %}
+  {% include './global.css' %}
+{% endset %}
+
+<style>
+  {{ css | cssmin | safe }}
+</style>
