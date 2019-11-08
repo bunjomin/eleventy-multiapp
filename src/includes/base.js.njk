@@ -4,22 +4,7 @@
     {% include './router.plugin.js' %}
     Vue.use(router);
     {% include './components/router-link.js.njk' %}
-    {% include './components/header.js.njk' %}
-    const options = {
-      el: '#root',
-      data: function () {
-        return {
-          page: null
-        }
-      },
-      template: `
-        <div>
-          <template v-if="page">
-            <component :is="page" />
-          </template>
-        </div>
-      `
-    };
-    window.bunjomin = new Vue(options);
+    {% include './components/top-nav.js.njk' %}
+    {% include './components/base.js.njk' %}
   })();
 </script>

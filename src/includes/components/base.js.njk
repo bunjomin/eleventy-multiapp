@@ -1,0 +1,19 @@
+const options = {
+  el: 'body > div',
+  data: function () {
+    return {
+      page: null
+    }
+  },
+  template: `
+    <div>
+      <top-nav />
+      <div class="page">
+        <template v-if="page">
+          <component :is="page" />
+        </template>
+      </div>
+    </div>
+  `
+};
+window.bunjomin = new Vue(options);
