@@ -14,6 +14,7 @@
   },
   "devDependencies": {
     "@11ty/eleventy": "0.9.0",
+    "clean-css": "^4.2.1",
     "incrementor": "0.2.0"
   }
 }
