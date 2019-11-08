@@ -1,0 +1,30 @@
+#topNav {
+  width: 100%;
+  padding: 2rem 4rem;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: var(--color-primary);
+}
+
+#topNav ul {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+#topNav li:not(:last-child) {
+  margin-right: 2rem;
+}
+
+#topNav a {
+  color: var(--color-white);
+  font-weight: 600;
+  font-size: var(--textMedium);
+  text-decoration: none;
+  transition: color 0.2s ease-in-out 0s;
+}
+
+#topNav a:hover {
+  color: var(--color-white-darken-1);
+}
