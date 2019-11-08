@@ -6,4 +6,21 @@
   permalink: '/about/'
 }
 ---
-{% include './' + apps[name].slug + '.js.njk' %}
+<script type="application/javascript" id="{{ apps[name].slug }}">
+  (() => {
+    const componentOptions = {
+      template: `
+        <div>
+          <h1>Hoo haw!</h1>
+          <router-link target="index">About</router-link>
+        </div>
+      `,
+      mounted() {
+        this.$nextTick(() => {
+          console.log('Mounted ABOUT');
+        });
+      }
+    };
+    {% include 'app-wrapper.js.njk' %}
+  })();
+</script>

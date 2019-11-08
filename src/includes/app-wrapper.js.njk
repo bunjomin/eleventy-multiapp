@@ -1,0 +1,18 @@
+const existing = [...document.querySelectorAll('#{{ apps[name].slug }}')];
+if (existing.length) existing.map((el) => el.remove());
+if (!(window.bunjomin instanceof Object)) return;
+const {{ apps[name].slug }} = Vue.component('{{ apps[name].slug }}', componentOptions);
+const options = {
+  el: 'body > div',
+  data: function () {
+    return {
+      page: null
+    }
+  },
+  template: '<div><template v-if="page"><component :is="page" /></template></div>',
+  components: {
+    {{ apps[name].slug }}
+  }
+};
+window.bunjomin = new Vue(options);
+window.bunjomin.page = '{{ apps[name].slug }}';

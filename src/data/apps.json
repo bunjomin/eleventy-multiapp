@@ -1,8 +1,10 @@
 {
   "index": {
-    "slug": "index"
+    "slug": "index",
+    "permalink": "/"
   },
   "about": {
-    "slug": "about"
+    "slug": "about",
+    "permalink": "/about/"
   }
 }
