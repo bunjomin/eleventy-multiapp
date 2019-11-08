@@ -1,10 +1,12 @@
-Vue.component('top-bar', {
+Vue.component('top-nav', {
   template: `
-    <header>
+    <header id="topNav">
       <nav>
         <ul>
           <li>
             <router-link target="index">Home</router-link>
+          </li>
+          <li>
             <router-link target="about">About</router-link>
           </li>
         </ul>
