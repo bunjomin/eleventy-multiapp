@@ -1,0 +1,17 @@
+Vue.component('router-link', {
+  props: ['target'],
+  data() {
+    return {
+      apps: JSON.parse(`{{ apps | dump | safe }}`) 
+    }
+  },
+  methods: {
+    async handleClick(e) {
+      const targetApp = this.apps[this.target];
+      await this.$getRoute(targetApp).then((res) => {
+        this.$setRoute(targetApp);
+      });
+    }
+  },
+  template: '<a :href="apps[target].permalink" @click.prevent="e => handleClick(e)"><slot /></a>'
+});

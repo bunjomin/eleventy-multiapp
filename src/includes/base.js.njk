@@ -3,6 +3,8 @@
     if (window.bunjomin instanceof Object) return;
     {% include './router.plugin.js' %}
     Vue.use(router);
+    {% include './components/router-link.js.njk' %}
+    {% include './components/header.js.njk' %}
     const options = {
       el: '#root',
       data: function () {
@@ -10,26 +12,14 @@
           page: null
         }
       },
-      template: '<div><template v-if="page"><component :is="page" /></template></div>',
-      components: {}
+      template: `
+        <div>
+          <template v-if="page">
+            <component :is="page" />
+          </template>
+        </div>
+      `
     };
     window.bunjomin = new Vue(options);
-    Vue.component('router-link', {
-      props: ['target'],
-      data() {
-        return {
-          apps: JSON.parse(`{{ apps | dump | safe }}`) 
-        }
-      },
-      methods: {
-        async handleClick(e) {
-          const targetApp = this.apps[this.target];
-          await this.$getRoute(targetApp).then((res) => {
-            this.$setRoute(targetApp);
-          });
-        }
-      },
-      template: '<a :href="apps[target].permalink" @click.prevent="e => handleClick(e)"><slot /></a>'
-    });
   })();
 </script>
